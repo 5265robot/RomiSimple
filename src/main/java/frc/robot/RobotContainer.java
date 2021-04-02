@@ -1,8 +1,6 @@
 /**
  * LESSON 2 - let's make it driveable!
  * 
- * We're also adding two files, a command called ArcadeDrive.java and a subsystem called RomiInputs.java.
- * 
  * (and remove lots of the unnecessary comments from WPI and from me)
  */
 
