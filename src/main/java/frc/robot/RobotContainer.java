@@ -42,12 +42,14 @@ public class RobotContainer {
   // ROBOTCONTAINER instructions
   public RobotContainer() {
     /*
-     * lets make the default style of driving to arcade style. Runcommand() is a
-     * convenience command. Convenient doesn't mean easy to understand with things
-     * such as "() ->". I'll go into this in the next lesson.
+     * lets make the default style of driving to arcade style. There is already a
+     * command for that in RomiDrivetrain.
+     * 
+     * Runcommand() is a convenience command. Convenient doesn't mean easy to
+     * understand with things such as "() ->". I'll go into this in the next lesson.
      */
-    m_romiDrivetrain.setDefaultCommand(
-        new RunCommand(() -> m_romiDrivetrain.arcadeDrive(-m_xBox.getRawAxis(1), m_xBox.getRawAxis(4))));
+    m_romiDrivetrain.setDefaultCommand(new RunCommand(
+        () -> m_romiDrivetrain.arcadeDrive(-m_xBox.getRawAxis(1), m_xBox.getRawAxis(4)), m_romiDrivetrain));
     // configureButtonBindings() is defined below
     configureButtonBindings();
   }
