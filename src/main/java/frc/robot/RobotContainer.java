@@ -41,10 +41,10 @@ public class RobotContainer {
               Constants.Drive.kLineP, 
               Constants.Drive.kLineI, 
               Constants.Drive.kLineD),
-            m_romiInput::getTurnRate, 
+            m_romiInput::getLightSensor, 
             Constants.Drive.lightLevel,
-            // output -> m_romiDrivetrain.arcadeDrive(Constants.Drive.speed, output),
-            output -> m_romiDrivetrain.tapeDrive(output), 
+            output -> m_romiDrivetrain.arcadeDrive(1.0, output),
+            // output -> m_romiDrivetrain.tapeDrive(output), 
             m_romiDrivetrain));
   }
 

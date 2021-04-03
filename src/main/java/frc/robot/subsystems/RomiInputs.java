@@ -26,10 +26,7 @@ public class RomiInputs extends SubsystemBase {
 
   // give a value to turn the robot
   public double getTurnRate() {
-    double diff = m_lightSensor.get() - Constants.Drive.lightLevel;
-    //if (diff * diff < Constants.Drive.diffSquare) {
-      //return 0.0;
-    //}
+    double diff = m_lightSensor.get();
     return diff;
   }
 
