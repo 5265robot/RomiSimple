@@ -28,5 +28,12 @@ public final class Constants {
         public static final double lightLevel = 0.55;
         // which side of the line? +1 is right, -1 is left
         public static final double lineSide = +1.0;
+        // how fast?
+        public static final double speed = 0.5;
+        // proportional, integral and derivative
+        public static final double kLineP = 0.5, kLineI = 0.0, kLineD = 0.0;
+        // threshold for turning
+		public static final double diffSquare = 0.015;
+
     }
 }
