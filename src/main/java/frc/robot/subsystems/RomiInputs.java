@@ -2,6 +2,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -31,5 +32,7 @@ public class RomiInputs extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    // put the light sensor on the SmartDashboard
+    SmartDashboard.putNumber("light", getLightSensor());
   }
 }

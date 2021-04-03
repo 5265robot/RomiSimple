@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.XboxController;
 
 public final class Constants {
 
@@ -17,5 +18,15 @@ public final class Constants {
     public final class IO{
         // xBox controller port
         public static final int Controller = 0;
+        public final XboxController.Button buttonB = XboxController.Button.kB;
+
+    }
+
+    // Driving variables
+    public final class Drive {
+        // level to keep while driving
+        public static final double lightLevel = 0.55;
+        // which side of the line? +1 is right, -1 is left
+        public static final double lineSide = +1.0;
     }
 }
