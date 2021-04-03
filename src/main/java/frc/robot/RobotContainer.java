@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.RomiDrivetrain;
 import frc.robot.subsystems.RomiInputs;
-import jdk.javadoc.internal.doclets.toolkit.util.DocFinder.Output;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.PIDCommand;
@@ -38,13 +37,15 @@ public class RobotContainer {
         .whenPressed(new InstantCommand(m_romiInput::printSensor, m_romiInput));
     // testing PID for driving along a line
     new JoystickButton(m_xBox, XboxController.Button.kA.value).whenHeld(
-      new PIDCommand(
-        new PIDController(Constants.Drive.kLineP, Constants.Drive.kLineI, Constants.Drive.kLineD), 
-        m_romiInput::getTurnRate, 
-        Constants.Drive.lightLevel, 
-        output -> m_romiDrivetrain.arcadeDrive(Constants.Drive.speed, output), 
-        m_romiDrivetrain)
-    );
+        new PIDCommand(new PIDController(
+              Constants.Drive.kLineP, 
+              Constants.Drive.kLineI, 
+              Constants.Drive.kLineD),
+            m_romiInput::getTurnRate, 
+            Constants.Drive.lightLevel,
+            // output -> m_romiDrivetrain.arcadeDrive(Constants.Drive.speed, output),
+            output -> m_romiDrivetrain.tapeDrive(output), 
+            m_romiDrivetrain));
   }
 
   public Command getAutonomousCommand() {

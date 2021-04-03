@@ -8,9 +8,10 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class RomiDrivetrain extends SubsystemBase {
-  
+
   private static final double kCountsPerRevolution = 1440.0;
   private static final double kWheelDiameterInch = 2.75591; // 70 mm
 
@@ -37,6 +38,18 @@ public class RomiDrivetrain extends SubsystemBase {
 
   public void arcadeDrive(double xaxisSpeed, double zaxisRotate) {
     m_diffDrive.arcadeDrive(xaxisSpeed, zaxisRotate);
+  }
+
+  public void tapeDrive(double turnRate) {
+    double leftSpeed = Constants.Drive.speed;
+    double rightSpeed = Constants.Drive.speed;
+    if (turnRate < 0){
+      leftSpeed = leftSpeed*turnRate*-1;
+    }
+    else {
+      rightSpeed = rightSpeed*turnRate;
+    }
+    m_diffDrive.tankDrive(leftSpeed, rightSpeed);
   }
 
   public void resetEncoders() {

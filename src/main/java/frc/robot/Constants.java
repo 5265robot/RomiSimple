@@ -9,13 +9,13 @@ import edu.wpi.first.wpilibj.XboxController;
 public final class Constants {
 
     // RomiInput variables
-	public final class AnalogInputs{
+    public final class AnalogInputs {
         // input position on the Romi for the light sensor
         public static final int lightSensor = 0;
     }
 
     // Input Output variables
-    public final class IO{
+    public final class IO {
         // xBox controller port
         public static final int Controller = 0;
         public final XboxController.Button buttonB = XboxController.Button.kB;
@@ -25,15 +25,15 @@ public final class Constants {
     // Driving variables
     public final class Drive {
         // level to keep while driving
-        public static final double lightLevel = 0.55;
+        public static final double lightLevel = 0.78;
         // which side of the line? +1 is right, -1 is left
         public static final double lineSide = +1.0;
         // how fast?
         public static final double speed = 0.5;
         // proportional, integral and derivative
-        public static final double kLineP = 0.5, kLineI = 0.0, kLineD = 0.0;
+        public static final double kLineP = 7.0, kLineI = 0.0, kLineD = 0.0;
         // threshold for turning
-		public static final double diffSquare = 0.015;
+        public static final double diffSquare = 0.007;
 
     }
 }
