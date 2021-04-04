@@ -24,19 +24,20 @@ public final class Constants {
 
     // Driving variables
     public final class Drive {
-        // level to keep while driving
-        public static final double lightLevel = 0.5;
-        // which side of the line? +1 is right, -1 is left
-        public static final double lineSide = +1.0;
-        // how fast?
-        public static final double speed = 1.0;
+        // level to keep while driving - this is the set point
+        public static final double lightLevel = 0.60;
+        // how fast should the robot go?
+        public static final double speed = 0.34;
         // proportional, integral and derivative
-        public static final double kLineP = 2.4, kLineI = 2.0, kLineD = 0.0;
-        // was 4.2, 1, 5
-        // threshold for turning
-        public static final double diffSquare = 0.007;
-        // turnrate inflection
-        public static final double inflection = 2.7;
+        public static final double kLineP = 3.65, kLineI = 1.0, kLineD = 20.0;
+        // timeout for autonomous
+        public static final double finishTime = 24.0;
+                // was 4.2, 1, 5
+        /*
+         * // which side of the line? +1 is right, -1 is left public static final double
+         * lineSide = +1.0; threshold for turning public static final double diffSquare
+         * = 0.007; // turnrate inflection public static final double inflection = 2.7;
+         */
 
     }
 }

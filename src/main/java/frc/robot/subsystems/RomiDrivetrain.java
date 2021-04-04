@@ -7,10 +7,8 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.Constants.Drive;
 
 public class RomiDrivetrain extends SubsystemBase {
 
@@ -42,19 +40,13 @@ public class RomiDrivetrain extends SubsystemBase {
   public void arcadeDrive(double xaxisSpeed, double zaxisRotate) {
     m_diffDrive.arcadeDrive(xaxisSpeed, zaxisRotate);
   }
-
-  public void tapeDrive(double turnRate) {
-    double leftSpeed = Drive.speed;
-    double rightSpeed = Drive.speed;
-    if (turnRate < Drive.inflection){
-      leftSpeed = leftSpeed/turnRate;
-    }
-    else {
-      rightSpeed = rightSpeed/(turnRate-4);
-    }
-    SmartDashboard.putNumber("turnrate", turnRate);
-    m_diffDrive.tankDrive(leftSpeed, rightSpeed);
-  }
+  /*
+   * public void tapeDrive(double turnRate) { double leftSpeed = Drive.speed;
+   * double rightSpeed = Drive.speed; if (turnRate < Drive.inflection){ leftSpeed
+   * = leftSpeed/turnRate; } else { rightSpeed = rightSpeed/(turnRate-4); }
+   * SmartDashboard.putNumber("turnrate", turnRate);
+   * m_diffDrive.tankDrive(leftSpeed, rightSpeed); }
+   */
 
   public void resetEncoders() {
     m_leftEncoder.reset();

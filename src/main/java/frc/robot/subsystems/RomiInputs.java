@@ -24,11 +24,10 @@ public class RomiInputs extends SubsystemBase {
     return m_lightSensor.get();
   }
 
-  // give a value to turn the robot
-  public double getTurnRate() {
-    double diff = m_lightSensor.get();
-    return diff;
-  }
+  /*
+   * give a value to turn the robot public double getTurnRate() { double diff =
+   * m_lightSensor.get(); return diff; }
+   */
 
   // put the value in the terminal
   public void printSensor() {
