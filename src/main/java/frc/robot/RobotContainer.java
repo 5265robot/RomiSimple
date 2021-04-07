@@ -42,11 +42,10 @@ public class RobotContainer {
     new JoystickButton(m_xBox, XboxController.Button.kB.value)
         .whenPressed(new InstantCommand(m_romiInput::printSensor, m_romiInput));
     // testing PID for driving along a line
-    new JoystickButton(m_xBox, XboxController.Button.kA.value).whenHeld(new PIDCommand(
-        new PIDController(Constants.Drive.kLineP, Constants.Drive.kLineI, Constants.Drive.kLineD),
-        m_romiInput::getLightSensor, Constants.Drive.lightLevel, output -> m_romiDrivetrain.arcadeDrive(1.0, output),
-        // output -> m_romiDrivetrain.tapeDrive(output),
-        m_romiDrivetrain));
+    new JoystickButton(m_xBox, XboxController.Button.kA.value).whenHeld(
+        new PIDCommand(new PIDController(Constants.Drive.kLineP, Constants.Drive.kLineI, Constants.Drive.kLineD),
+            m_romiInput::getLightSensor, Constants.Drive.lightLevel,
+            output -> m_romiDrivetrain.arcadeDrive(1.0, output), m_romiDrivetrain));
   }
 
   public Command getAutonomousCommand() {
