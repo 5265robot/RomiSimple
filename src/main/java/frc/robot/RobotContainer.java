@@ -68,6 +68,8 @@ public class RobotContainer {
     m_chooser.setDefaultOption("auto forward", SimpleDriveForward);
     m_chooser.addOption("rotate in place", SimpleDriveCircle);
     m_chooser.addOption("auto paths", autoRamsetePaths());
+    // drn - publish auto options
+    SmartDashboard.putData(m_chooser);
 
     // configureButtonBindings() is defined below
     configureButtonBindings();
@@ -77,13 +79,17 @@ public class RobotContainer {
 
   // Configure the button bindings
   private void configureButtonBindings() {
+    SmartDashboard.setDefaultNumber("Spin Volts", Auto.simpleSpinVolt);
+    SmartDashboard.setDefaultNumber("Spin timeout", Auto.simpleSpinTimeout);
 
     new JoystickButton(m_xBox, XboxController.Button.kB.value)
-        .whenPressed(new InstantCommand(() -> m_romiDrivetrain.tankDriveVolts(Auto.simpleSpinVolt, Auto.simpleSpinVolt),m_romiDrivetrain)
-        .withTimeout(Auto.simpleSpinTimeout));
+        .whenPressed(
+          new InstantCommand(() -> m_romiDrivetrain.tankDriveVolts(
+              SmartDashboard.getNumber("Spin Volts", Auto.simpleSpinVolt),SmartDashboard.getNumber("Spin Volts", Auto.simpleSpinVolt)),
+              m_romiDrivetrain)
+            .withTimeout(SmartDashboard.getNumber("Spin timeout", Auto.simpleSpinTimeout))
+          );
 
-    // drn - publish auto options
-    SmartDashboard.putData(m_chooser);
 }
 
   public Command getAutonomousCommand() {
