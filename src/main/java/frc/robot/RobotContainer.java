@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.controller.RamseteController;
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
@@ -59,7 +60,7 @@ public class RobotContainer {
 
     // default driving will be curve drive, which supposedly this handles better than arcade
     m_romiDrivetrain.setDefaultCommand(new RunCommand(
-      () -> m_romiDrivetrain.curveDrive(-m_xBox.getRawAxis(1), m_xBox.getRawAxis(4)), m_romiDrivetrain));
+      () -> m_romiDrivetrain.arcadeDrive(-m_xBox.getRawAxis(1), m_xBox.getRawAxis(4)), m_romiDrivetrain));
 
     // drn -- sets up the driver's station to have options for autonomous
     m_chooser.setDefaultOption("auto forward", SimpleDriveForward);
@@ -74,6 +75,9 @@ public class RobotContainer {
 
   // Configure the button bindings
   private void configureButtonBindings() {
+
+    // drn - publish auto options
+    SmartDashboard.putData(m_chooser);
 }
 
   public Command getAutonomousCommand() {
