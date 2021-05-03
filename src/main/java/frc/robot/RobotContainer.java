@@ -58,7 +58,7 @@ public class RobotContainer {
   // ROBOTCONTAINER instructions
   public RobotContainer() {
 
-    // default driving will be curve drive, which supposedly this handles better than arcade
+    // default driving will be arcade drive
     m_romiDrivetrain.setDefaultCommand(new RunCommand(
       () -> m_romiDrivetrain.arcadeDrive(-m_xBox.getRawAxis(1), m_xBox.getRawAxis(4)), m_romiDrivetrain));
 
