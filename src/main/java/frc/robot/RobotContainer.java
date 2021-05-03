@@ -14,11 +14,13 @@ import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConst
 import frc.robot.Constants.Drive;
 import frc.robot.Constants.path;
 import frc.robot.Constants.traj;
+import frc.robot.Constants.Drive.Auto;
 import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 // ROBOTCONTAINER begins here
 public class RobotContainer {
@@ -48,12 +50,12 @@ public class RobotContainer {
   // drn -- test command for autonomous
   // drives forward for 2 secs
   private final Command SimpleDriveForward = new RunCommand( () ->
-    m_romiDrivetrain.curveDrive(Drive.Auto.simpleDriveSpeed, 0.0),m_romiDrivetrain)
-    .withTimeout(Drive.Auto.simpleDriveTime);
+    m_romiDrivetrain.curveDrive(Auto.simpleDriveSpeed, 0.0),m_romiDrivetrain)
+    .withTimeout(Auto.simpleDriveTime);
 
   private final Command SimpleDriveCircle = new RunCommand( () ->
-    m_romiDrivetrain.curveDrive(0.0, Drive.Auto.simpleDriveTurn),m_romiDrivetrain)
-    .withTimeout(Drive.Auto.simpleDriveTime);
+    m_romiDrivetrain.curveDrive(Auto.simpleDriveSpeed, Auto.simpleDriveTurn),m_romiDrivetrain)
+    .withTimeout(Auto.simpleDriveTime);
 
   // ROBOTCONTAINER instructions
   public RobotContainer() {
@@ -75,6 +77,10 @@ public class RobotContainer {
 
   // Configure the button bindings
   private void configureButtonBindings() {
+
+    new JoystickButton(m_xBox, XboxController.Button.kB.value)
+        .whenPressed(new InstantCommand(() -> m_romiDrivetrain.tankDriveVolts(Auto.simpleSpinVolt, Auto.simpleSpinVolt),m_romiDrivetrain)
+        .withTimeout(Auto.simpleSpinTimeout));
 
     // drn - publish auto options
     SmartDashboard.putData(m_chooser);

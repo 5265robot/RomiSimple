@@ -94,8 +94,10 @@ public final class Constants {
             public static final double kSpeed = 0.8;
             public static final double kAccel = 0.8;
 
-            public static final double simpleDriveTurn = 0.5;
-			public static final double simpleDriveTime = 2.0;
+            public static final double simpleDriveTime = 2.0;
+            public static final double simpleDriveTurn = 1.0;
+            public static final double simpleSpinVolt = 0.5;
+			public static final double simpleSpinTimeout = 1.0;
         }
         // line followers
         // level to keep while driving
