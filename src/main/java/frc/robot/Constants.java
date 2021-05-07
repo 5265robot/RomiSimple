@@ -28,8 +28,9 @@ public final class Constants {
             static final Pose2d startPose = new Pose2d(0.0,0.0,new Rotation2d(Units.degreesToRadians(90)));
             static final Pose2d endPose = new Pose2d(0.0,0.2,new Rotation2d(Units.degreesToRadians(90)));
             static List<Translation2d> points = List.of(
-                new Translation2d(0.2,0.0),
-                new Translation2d(0.2,0.2)
+                //new Translation2d(0.2,0.0),
+                //new Translation2d(0.2,0.2)
+                new Translation2d(0.19, 0)
                 );
         }
         public static class C{            
