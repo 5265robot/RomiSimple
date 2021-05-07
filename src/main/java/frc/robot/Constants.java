@@ -18,7 +18,7 @@ public final class Constants {
     public final static class path{
         public static class A {            
             static final Pose2d startPose = new Pose2d(0.0,0.0,new Rotation2d(Units.degreesToRadians(0)));
-            static final Pose2d endPose = new Pose2d(0.0,0.2,new Rotation2d(Units.degreesToRadians(0)));
+            static final Pose2d endPose = new Pose2d(0.2,0.2,new Rotation2d(Units.degreesToRadians(0)));
             static List<Translation2d> points = List.of(
                 //new Translation2d(0.2,0.0),
                 //new Translation2d(0.2,0.2)
