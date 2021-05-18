@@ -18,16 +18,17 @@ public final class Constants {
     public final static class path{
         public static class A {            
             static final Pose2d startPose = new Pose2d(0.0,0.0,new Rotation2d(Units.degreesToRadians(0)));
-            static final Pose2d endPose = new Pose2d(0.17,0.19,new Rotation2d(Units.degreesToRadians(0)));
+            static final Pose2d endPose = new Pose2d(0.17,0.16,new Rotation2d(Units.degreesToRadians(90)));
             static List<Translation2d> points = List.of(
-                new Translation2d(0.1, 0.0),
-                new Translation2d(0.17, 0.06)
+                //new Translation2d(0.02, 0.01),
+                //new Translation2d(0.06, 0.02),
+                //new Translation2d(0.08, 0.03)
             
-                //new Translation2d(0.05, 0.01),
-                //new Translation2d(0.1, 0.03),
-                //new Translation2d(0.13, 0.05),
-                //new Translation2d(0.16, 0.1),
-                //new Translation2d(0.17, 0.14)
+                new Translation2d(0.05, 0.01),
+                new Translation2d(0.1, 0.03),
+                new Translation2d(0.13, 0.05),
+                new Translation2d(0.16, 0.1),
+                new Translation2d(0.17, 0.14)
                 //new Translation2d(0.17, 0.0)
                 );
         }
