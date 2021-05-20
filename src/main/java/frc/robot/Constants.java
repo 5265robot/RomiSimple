@@ -60,9 +60,24 @@ public final class Constants {
 
     // Trajectory
     public final static class traj {
-        public static final double ksVolts = 0.929;
-        public static final double kvVoltSecondsPerMeter = 6.33;
-        public static final double kaVoltSecondsSquaredPerMeter = 0.0389;
+
+        /*
+                // Feedforward Analysis: kS
+        public static final double ksVolts = 0.0799;
+        // Feedforward Analysis: kV
+        public static final double kvVoltSecondsPerMeter = 0.129;
+        // Feedforward Analysis: kA
+        public static final double kaVoltSecondsSquaredPerMeter = 0.018;
+        // Optimal Controller Gain for preset "WPILib (2020-)": kP
+        public static final double kPDriveVel = 0.804;
+
+        */
+        // Feedforward Analysis: kS
+        public static final double ksVolts = 0.332;
+        // Feedforward Analysis: kV
+        public static final double kvVoltSecondsPerMeter = 2.16;
+        // Feedforward Analysis: kA
+        public static final double kaVoltSecondsSquaredPerMeter = 0.00799;
 
         // check this width
         public static final double kTrackwidthMeters = 0.142072613;
@@ -72,7 +87,8 @@ public final class Constants {
         public static final double kRamseteB = 2.0;
         public static final double kRamseteZeta = 0.7;
         // get this from characterization routine!!
-        public static final double kPDriveVel = 0.8;
+        // Optimal Controller Gain for preset "WPILib (2020-)": kP
+        public static final double kPDriveVel = 0.008;
     }
 
     // RomiInput variables
