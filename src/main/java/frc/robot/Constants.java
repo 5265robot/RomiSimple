@@ -61,17 +61,6 @@ public final class Constants {
     // Trajectory
     public final static class traj {
 
-        /*
-                // Feedforward Analysis: kS
-        public static final double ksVolts = 0.0799;
-        // Feedforward Analysis: kV
-        public static final double kvVoltSecondsPerMeter = 0.129;
-        // Feedforward Analysis: kA
-        public static final double kaVoltSecondsSquaredPerMeter = 0.018;
-        // Optimal Controller Gain for preset "WPILib (2020-)": kP
-        public static final double kPDriveVel = 0.804;
-
-        */
         // Feedforward Analysis: kS
         public static final double ksVolts = 0.332;
         // Feedforward Analysis: kV
