@@ -91,7 +91,10 @@ public class RobotContainer {
             .withTimeout(SmartDashboard.getNumber("Spin timeout", Auto.simpleSpinTimeout))
           );
     new JoystickButton(m_xBox, XboxController.Button.kBumperLeft.value)
-       .whenPressed(new TaddDrive(100.0, 100.0));
+        // TaddDrive takes left and right encoder values
+        // and the instance of our drive train
+        // TaddDrive stops when the encoder values exceed these values
+       .whenPressed(new TaddDrive(100.0, 100.0,m_romiDrivetrain));
 
 }
 
