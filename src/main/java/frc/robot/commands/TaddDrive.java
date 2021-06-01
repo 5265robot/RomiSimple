@@ -36,10 +36,9 @@ public class TaddDrive extends CommandBase {
   public void end(boolean interrupted) {
     m_drive.fullStop();
   }
-
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return (m_drive.getLeftDistanceInch()>left);
+    return m_drive.getLeftDistanceInch()>left;
   }
 }
