@@ -15,7 +15,7 @@ import frc.robot.Constants.Drive;
 import frc.robot.Constants.path;
 import frc.robot.Constants.traj;
 import frc.robot.Constants.Drive.Auto;
-import frc.robot.commands.drnDriveByEncoder;
+import frc.robot.commands.TaddDrive;
 import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -91,6 +91,13 @@ public class RobotContainer {
               m_romiDrivetrain)
             .withTimeout(SmartDashboard.getNumber("Spin timeout", Auto.simpleSpinTimeout))
           );
+    
+          new JoystickButton(m_xBox, XboxController.Button.kBumperLeft.value)
+        // TaddDrive takes left and right encoder values
+        // and the instance of our drive train
+        // TaddDrive stops when the encoder values exceed these values
+       .whenPressed(new TaddDrive(1000.0, 1000.0,m_romiDrivetrain));
+
 
     new JoystickButton(m_xBox, XboxController.Button.kA.value)
           .whenPressed(new drnDriveByEncoder(100.0, 100.0));

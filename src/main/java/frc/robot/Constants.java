@@ -26,7 +26,9 @@ public final class Constants {
             
                 //new Translation2d(1.1, 0.0),
                 //new Translation2d(2.2, 0.0),
-                new Translation2d(0.4, 0.4)
+                new Translation2d(0.4,0.4)
+                //new Translation2d(0.7, 0.01),
+                //new Translation2d(0.6, 0.2)
                 //new Translation2d(0.16, 0.1),
                 //new Translation2d(0.17, 0.14)
                 //new Translation2d(0.17, 0.0)
