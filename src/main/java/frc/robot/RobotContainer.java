@@ -15,6 +15,7 @@ import frc.robot.Constants.Drive;
 import frc.robot.Constants.path;
 import frc.robot.Constants.traj;
 import frc.robot.Constants.Drive.Auto;
+import frc.robot.commands.drnDriveByEncoder;
 import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -57,6 +58,7 @@ public class RobotContainer {
     m_romiDrivetrain.curveDrive(Auto.simpleDriveSpeed, Auto.simpleDriveTurn),m_romiDrivetrain)
     .withTimeout(Auto.simpleDriveTime);
 
+
   // ROBOTCONTAINER instructions
   public RobotContainer() {
 
@@ -89,6 +91,12 @@ public class RobotContainer {
               m_romiDrivetrain)
             .withTimeout(SmartDashboard.getNumber("Spin timeout", Auto.simpleSpinTimeout))
           );
+
+    new JoystickButton(m_xBox, XboxController.Button.kA.value)
+          .whenPressed(new drnDriveByEncoder(100.0, 100.0));
+
+    new JoystickButton(m_xBox, XboxController.Button.kX.value)
+          .whenPressed(printEncoders());
 
 }
 
@@ -136,6 +144,11 @@ public class RobotContainer {
     //.andThen( ramsetePath(setTrajC()) )
     //.andThen( ramsetePath(setTrajD()) )
     .andThen(new InstantCommand(() -> m_romiDrivetrain.fullStop(),m_romiDrivetrain));
+  }
+
+  public Command printEncoders (){
+    System.out.println("test string");
+    return null;
   }
   
 }

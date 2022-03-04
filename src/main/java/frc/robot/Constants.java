@@ -105,7 +105,7 @@ public final class Constants {
         public final class Auto {
             public static final double simpleDriveSpeed = 0.5;
             public static final double kSpeed = 0.8;
-            public static final double kAccel = 0.8;
+            public static final double kAccel= 0.8; 
 
             public static final double simpleDriveTime = 2.0;
             public static final double simpleDriveTurn = 1.0;

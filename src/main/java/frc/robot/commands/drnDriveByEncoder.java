@@ -4,24 +4,17 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj2.command.PrintCommand;
 
-/** An example command that uses an example subsystem. */
-public class ExampleCommand extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final RomiDrivetrain m_subsystem;
+public class drnDriveByEncoder extends CommandBase {
 
-  /**
-   * Creates a new ExampleCommand.
-   *
-   * @param subsystem The subsystem used by this command.
-   */
-  public ExampleCommand(RomiDrivetrain subsystem) {
-    m_subsystem = subsystem;
+  double left;
+  double right;
+  /** Creates a new drnDriveByEncoder. */
+  public drnDriveByEncoder(double leftDist, double rightDist) {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+    left = leftDist;
+    right = rightDist;
   }
 
   // Called when the command is initially scheduled.
@@ -41,5 +34,4 @@ public class ExampleCommand extends CommandBase {
   public boolean isFinished() {
     return false;
   }
-
 }
